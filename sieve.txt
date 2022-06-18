@@ -7,3 +7,23 @@ vector<bool> sieve(100000,false) ;
             }
         }
     }
+
+
+  vector<int> spf(100000,0);
+
+    for(int i=2;i<spf.size();i++) spf[i]=i;
+
+    for(int i=2;i<spf.size();i++) {
+        if(spf[i]==i) {
+            for(int j=i*i;j<spf.size();j+=i) {
+                if(spf[j]==j) {
+                    spf[j]=i;
+                }
+            }
+        }
+    }
+
+    while(n!=1) {
+        cout<<spf[n]<<" ";
+        n=n/spf[n];
+    }
