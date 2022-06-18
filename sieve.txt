@@ -1,0 +1,9 @@
+vector<bool> sieve(100000,false) ;
+
+    for(int i=2;i<sieve.size();i++) {
+        if(sieve[i]==false) {
+            for(int j=i*i;j<sieve.size();j+=i) {
+                sieve[j]=true;
+            }
+        }
+    }
