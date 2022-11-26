@@ -1,0 +1,18 @@
+ // Greater than equals to 
+
+int f3(vector<int> &v,int key) {
+        int lo=0;
+        int hi = v.size()-1;
+        
+        int ans = -1;
+        
+        while(lo <= hi) {
+            int mid = (lo+hi) >> 1;
+            if(v[mid] > key) {
+                ans = v[mid];
+                hi= mid-1;
+            }
+            else lo=mid+1;
+        }
+        return ans;
+    }
